@@ -15,7 +15,7 @@ main {
   display: flex;
   > .container {
     background-color: white;
-    padding: 30px 20px;
+
     flex: 1;
   }
 }
@@ -23,4 +23,10 @@ main {
 .navbar-brand {
   font-family: serif;
   font-size: 28px;
+}
+
+@media (min-width: 992px) {
+  main > .container {
+    padding: 30px 20px;
+  }
 }

@@ -17,10 +17,10 @@ export default () => {
                 <a href="/" className="nav-link px-3">
                   首页
                 </a>
-                <a href="/list" className="nav-link px-2">
+                <a href="/list" className="nav-link px-3">
                   名师堂
                 </a>
-                <a href="/about" className="nav-link px-2">
+                <a href="/about" className="nav-link px-3">
                   常见问题
                 </a>
                 <a href="/latest" className="nav-link px-2">
