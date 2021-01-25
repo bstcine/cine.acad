@@ -2,16 +2,16 @@ const tutors = [
   {
     id: 1,
     name: '邱老师',
-    price: '$200/小时',
+    price: '$200~$400/小时',
     desc:
       'Kevin先生具有50年的的教学经验。他曾在哈佛大学肯尼迪政府学院、Phillips Exeter、布朗迪斯大学、南卡罗莱纳大学、香港国际学校-Hong Kong International School、麻省大学波士顿分校、南新罕布什尔大学、西班牙的Swift English School，沙特阿拉伯首都利雅得的公共管理学院、伊朗德黑兰的GTE Sylvania、墨西哥的Universidad Norteamericana等学校教过英文写作课。',
     img: 'https://static.bstcine.com/2021/01/19/183355364SZ3CAR1.png',
-    highlights: ['SAT满分', '哈佛', '终身教授'],
+    highlights: ['SAT', '托福', '动物农庄'],
   },
   {
     id: 2,
     name: 'Kevin King',
-    price: '$150/小时',
+    price: '$150~$200/小时',
     desc:
       '中国SAT培训界内凤毛麟角的英语基本功和教学技巧兼备的明星老师。2010年以优异的成绩毕业于上海外国语大学研究生院，在她看来，求学阶段以“优秀”通过英语专业八级、大三获上海市高级口译证书、首次参加SAT考试便获得了阅读和数学双800（满分）总分2270、首次托福“裸考”获得119分……，都只是其履历中微小而不足道的一笔，她认为作为一名英语教学老师，最关键的把握每个学生的特点，挖掘他们的潜力，激发他们的学习热情，最终让他们能找到自己的学习节奏，成为学习的主动参与者。',
     img: 'https://static001.geekbang.org/resource/image/4a/3a/4a0ce013a1a828e5a13eb856b2e2yy3a.png',

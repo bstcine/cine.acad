@@ -38,6 +38,7 @@
 .detail-desc {
   flex: 1;
   padding-left: 25px;
+  position: relative;
 }
 .detail-name {
   border-bottom: 1px solid #d9d9d9;
@@ -72,6 +73,12 @@
   left: 0;
   right: 0;
   z-index: 1000;
+  padding: 10px 15px;
+  background-color: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  .btn {
+    width: 100%;
+  }
 }
 @media (min-width: 768px) {
   .detail-cover {
@@ -80,7 +87,18 @@
   }
 }
 @media (min-width: 992px) {
+  .page-detail {
+    max-width: 960px !important;
+  }
   .contact-container {
-    position: static;
+    position: absolute;
+    z-index: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    padding: 0;
+    .btn {
+      width: auto;
+    }
   }
 }

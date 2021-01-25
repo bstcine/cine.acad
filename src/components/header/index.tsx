@@ -13,8 +13,14 @@ const Header = () => {
             <a href="/" className="nav-link px-3">
               首页
             </a>
+            <a href="/list" className="nav-link px-2">
+              名师堂
+            </a>
             <a href="/about" className="nav-link px-2">
-              关于我们
+              常见问题
+            </a>
+            <a href="/latest" className="nav-link px-2">
+              最新信息
             </a>
           </div>
         </div>
