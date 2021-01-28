@@ -28,6 +28,7 @@ const Detail = () => {
           <div className="detail-desc">
             <div className="detail-name">
               <h3>{o.name}</h3>
+              <span className="detail-price">价格：$200~$260/小时</span>
             </div>
             <div className="detail-brief">{o.desc}</div>
 

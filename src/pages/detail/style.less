@@ -43,6 +43,7 @@
 .detail-name {
   border-bottom: 1px solid #d9d9d9;
   margin-bottom: 16px;
+  position: relative;
 }
 
 .detail-brief {
@@ -84,6 +85,12 @@
   .detail-cover {
     width: 128px;
     height: 168px;
+  }
+  .detail-price {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 @media (min-width: 992px) {
