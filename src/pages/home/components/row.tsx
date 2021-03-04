@@ -1,5 +1,6 @@
 import React from 'react';
 import Item from '@/components/item';
+import { NavLink } from 'umi';
 
 const Row = ({ id, title, desc, tutors, moreBtn }: any) => {
   return (
@@ -9,13 +10,13 @@ const Row = ({ id, title, desc, tutors, moreBtn }: any) => {
         <p className="card-text">{desc}</p>
 
         <div className="list-wrapper">
-          {tutors && !!tutors.length && tutors.map((tutor: any) => <Item {...tutor} />)}
+          {tutors && !!tutors.length && tutors.map((tutor: any) => <Item key={tutor.id} {...tutor} />)}
         </div>
 
-        <a href={`/list?type=${id}`} className="btn btn-primary btn-more">
+        <NavLink to={`/list?type=${id}`} className="btn btn-primary btn-more">
           {`${moreBtn ? moreBtn : '更多TUTOR'} `}
           <i className="fas fa-angle-double-right"></i>
-        </a>
+        </NavLink>
       </div>
     </div>
   );

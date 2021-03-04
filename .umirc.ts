@@ -23,4 +23,5 @@ export default defineConfig({
   chainWebpack(config) {
     config.module.rule('file').test(/.mp4$/).use('file-loader').loader('file-loader');
   },
+  // hash:true
 });

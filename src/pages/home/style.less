@@ -3,20 +3,28 @@ main.content {
 }
 main .container > .card {
   margin-bottom: 15px;
+  border: none;
+  border-bottom: 1px solid #eaecf0;
 }
 
 .card-title {
-  font-family: serif;
+  font-size: 24px;
+  color: #053091;
+  font-weight: normal;
 }
 
-.btn-more {
-  //position: absolute;
-  //bottom: 16px;
-  //right: 16px;
+.card-body .btn-more {
   float: right;
+  border-radius: 16px !important;
+  padding-left: 18px;
+  padding-right: 18px;
+  background-color: #053091;
+  border-color: #053091;
 }
 .card-text {
   font-size: 14px;
+  color: #2b2c2d;
+  margin-bottom: 0;
 }
 .home-card {
   position: relative;
@@ -33,13 +41,14 @@ main .container > .card {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  margin-bottom: 20px;
   .item-highlights {
     width: 142px;
     margin-right: -12px;
   }
 }
 @media (min-width: 768px) {
-  .btn-more {
-    margin-top: 14px;
+  .card-text {
+    font-size: 16px;
   }
 }

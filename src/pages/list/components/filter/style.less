@@ -3,8 +3,10 @@
 }
 
 .filter-name {
-  font-size: 14px;
+  font-size: 16px;
   min-width: 50px;
+  color: #2152ab;
+  font-weight: bold;
 }
 
 .filter-tag {
@@ -14,17 +16,21 @@
 
   a {
     text-decoration: none;
-    color: var(--bs-secondary);
+    color: #2b2c2d;
     font-size: 13px;
     margin-right: 12px;
+    &:last-child {
+      margin-right: 0;
+    }
 
     &:hover {
       text-decoration: underline;
     }
     &.active {
       color: white;
-      background-color: var(--bs-primary);
+      background-color: #2152ab;
       padding: 4px 6px;
+      border-radius: 8px;
     }
   }
 }

@@ -52,7 +52,7 @@ export default () => {
   return (
     <div className="container">
       {arr.map((o) => (
-        <Row {...o} />
+        <Row key={o.id} {...o} />
       ))}
     </div>
   );

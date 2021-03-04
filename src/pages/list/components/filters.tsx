@@ -1,6 +1,6 @@
 const filters = [
   {
-    id: 'type',
+    param_name: 'type',
     name: '方向',
     list: [
       { id: '', name: '全部' },
@@ -12,7 +12,7 @@ const filters = [
     ],
   },
   {
-    id: 'tag',
+    param_name: 'tag',
     name: '年级',
     list: [
       { id: '', name: '全部' },

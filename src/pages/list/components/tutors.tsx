@@ -7,6 +7,8 @@ const tutors = [
       'Kevin先生具有50年的的教学经验。他曾在哈佛大学肯尼迪政府学院、Phillips Exeter、布朗迪斯大学、南卡罗莱纳大学、香港国际学校-Hong Kong International School、麻省大学波士顿分校、南新罕布什尔大学、西班牙的Swift English School，沙特阿拉伯首都利雅得的公共管理学院、伊朗德黑兰的GTE Sylvania、墨西哥的Universidad Norteamericana等学校教过英文写作课。',
     img: 'https://static.bstcine.com/2021/01/19/183355364SZ3CAR1.png',
     highlights: ['SAT', '托福', '动物农庄'],
+    type_ids: ['1', '2'],
+    tag_ids: ['1', '2', '3'],
   },
   {
     id: 2,

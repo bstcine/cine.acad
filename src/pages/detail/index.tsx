@@ -8,7 +8,7 @@ const Detail = () => {
   const o = {
     id: 1,
     name: '邱老师',
-    price: '$200/小时',
+    price: '$200~$260/小时',
     desc: '善恩明星老师，辅导众多学生，是中国SAT培训界内凤毛麟角的英语基本功和教学技巧兼备的明星老师。',
     img: 'https://static.bstcine.com/2021/01/19/183355364SZ3CAR1.png',
     highlights: ['SAT', '托福', '动物农庄'],
@@ -28,7 +28,7 @@ const Detail = () => {
           <div className="detail-desc">
             <div className="detail-name">
               <h3>{o.name}</h3>
-              <span className="detail-price">价格：$200~$260/小时</span>
+              <span className="detail-price">{o.price}</span>
             </div>
             <div className="detail-brief">{o.desc}</div>
 
@@ -37,7 +37,7 @@ const Detail = () => {
                 教授学科：
                 <div className="detail-highlights">
                   {o.highlights.map((o: string) => (
-                    <span>{o}</span>
+                    <span key={o}>{o}</span>
                   ))}
                 </div>
               </div>
@@ -46,7 +46,7 @@ const Detail = () => {
             </div>
             <div className="contact-container">
               <button className="btn btn-primary btn-lg px-5 float-end" onClick={handleAskBtn}>
-                立即咨询
+                <i className="fab fa-weixin"></i> 立即咨询
               </button>
             </div>
           </div>

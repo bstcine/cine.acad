@@ -2,20 +2,35 @@
   .card-header {
     font-size: 20px;
     font-weight: 400;
+    border-bottom: none;
+  }
+  .card {
+    border-bottom-color: #eaecf0 !important;
+    border-bottom-width: 2px !important;
+
+    &:last-child {
+      border-bottom: none !important;
+    }
   }
 }
 
 .stars {
   color: #ffe623;
+  margin-right: 12px;
 }
 .evaluate-desc {
-  color: #9e9e9e;
+  color: #6b6d6f;
   font-size: 14px;
 }
 .evaluates {
   line-height: 1.8;
+  padding-left: 0;
+  list-style: none;
+  color: #1c1c1d;
   li {
-    margin-bottom: 8px;
+    border-bottom: 1px solid #eaecf0;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
   }
 }
 .detail-top {
@@ -41,17 +56,22 @@
   position: relative;
 }
 .detail-name {
-  border-bottom: 1px solid #d9d9d9;
   margin-bottom: 16px;
   position: relative;
+  h3 {
+    color: #053091;
+  }
 }
-
+.detail-price {
+  color: #fa8919;
+}
 .detail-brief {
   margin-bottom: 8px;
+  color: #2b2c2d;
 }
 .detail-history {
   font-size: 14px;
-  color: #8d8d8d;
+  color: #2152ab;
 }
 .detail-highlights {
   line-height: 16px;
@@ -61,8 +81,8 @@
 
   span {
     margin-right: 6px;
-    background-color: #fbf5ee;
-    color: #fa8919;
+    background-color: #f2f7fe;
+    color: #2152ab;
     padding: 4px 6px;
     margin-bottom: 4px;
     display: inline-block;
@@ -79,9 +99,26 @@
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   .btn {
     width: 100%;
+    background-color: #053091;
+    border-color: #053091;
+  }
+}
+@media (max-width: 767px) {
+  .detail-cover {
+    position: absolute;
+  }
+  .detail-desc {
+    padding-left: 0;
+  }
+  .detail-name {
+    padding-left: 100px;
+    height: 110px;
   }
 }
 @media (min-width: 768px) {
+  .detail-history {
+    font-size: 16px;
+  }
   .detail-cover {
     width: 128px;
     height: 168px;
@@ -91,6 +128,9 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+  }
+  .detail-highlights {
+    display: inline-block;
   }
 }
 @media (min-width: 992px) {
@@ -104,6 +144,7 @@
     bottom: 0;
     left: auto;
     padding: 0;
+    border-top: none;
     .btn {
       width: auto;
     }

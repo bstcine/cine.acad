@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.less';
+import { NavLink } from 'umi';
 
 const Item = ({ id, name, img, desc, highlights, price }: any) => {
   return (
@@ -12,15 +13,15 @@ const Item = ({ id, name, img, desc, highlights, price }: any) => {
         <div className="item-desc">{desc}</div>
         <div className="item-highlights">
           {highlights.map((o: string) => (
-            <span>{o}</span>
+            <span key={o}>{o}</span>
           ))}
         </div>
-        <a className="item-more" href={`/detail?id=${id}`}>
+        <NavLink className="item-more" to={`/detail?id=${id}`}>
           了解更多
-        </a>
+        </NavLink>
         <span className="item-price">{price}</span>
       </div>
-      <a href={`/detail?id=${id}`} />
+      <NavLink to={`/detail?id=${id}`} />
     </div>
   );
 };
