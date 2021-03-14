@@ -8,7 +8,7 @@ const Header = ({ className = 'header-blue' }) => {
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container d-flex flex-column flex-md-row align-items-center justify-content-between">
           <NavLink className="navbar-brand" to="/">
-            <img src={require('@/asset/logo_cine.svg')} alt="logo" />
+            <img src={require('@/asset/logo_cine2.svg')} alt="logo" />
           </NavLink>
 
           <div className="navbar-nav flex-row">
@@ -16,14 +16,14 @@ const Header = ({ className = 'header-blue' }) => {
               <NavLink exact to="/" className="nav-link px-3" activeClassName="active">
                 首页
               </NavLink>
-              <NavLink to="/list" className="nav-link px-3" activeClassName="active">
-                名师堂
+              <NavLink to="/latest" className="nav-link px-3" activeClassName="active">
+                最新课程
               </NavLink>
+              {/*<NavLink to="/list" className="nav-link px-3" activeClassName="active">*/}
+              {/*  名师堂*/}
+              {/*</NavLink>*/}
               <NavLink to="/about" className="nav-link px-3" activeClassName="active">
                 常见问题
-              </NavLink>
-              <NavLink to="/latest" className="nav-link px-2" activeClassName="active">
-                最新信息
               </NavLink>
             </div>
           </div>

@@ -6,7 +6,10 @@ main .container > .card {
   border: none;
   border-bottom: 1px solid #eaecf0;
 }
-
+.home-card .card-body {
+  padding-left: 0;
+  padding-right: 0;
+}
 .card-title {
   font-size: 24px;
   color: #053091;
@@ -25,6 +28,10 @@ main .container > .card {
   font-size: 14px;
   color: #2b2c2d;
   margin-bottom: 0;
+  white-space: break-spaces;
+  p {
+    margin-bottom: 8px;
+  }
 }
 .home-card {
   position: relative;
@@ -43,7 +50,6 @@ main .container > .card {
   align-items: flex-start;
   margin-bottom: 20px;
   .item-highlights {
-    width: 142px;
     margin-right: -12px;
   }
 }

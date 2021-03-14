@@ -3,7 +3,7 @@ import './style.less';
 import { NavLink, history } from 'umi';
 import URLParse from 'url-parse';
 
-const Filter = ({ param_name, name, list, current }: any) => {
+const Filter = ({ param_name, name, list }: any) => {
   const getURL = (param_name: string, id: string) => {
     const queryNow = history.location.query;
     const query = { ...queryNow, [param_name]: id };
@@ -27,7 +27,7 @@ const Filter = ({ param_name, name, list, current }: any) => {
               if (!match) {
                 return false;
               }
-              return URLParse(location.search, true).query[param_name] === o.id;
+              return URLParse(location.search, true).query[param_name] === o.id.toString();
             }}
           >
             {o.name}

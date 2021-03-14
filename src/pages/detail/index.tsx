@@ -1,48 +1,57 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // @ts-ignore
 import Modal from 'react-modal';
 import './style.less';
+import tutors from '../list/components/tutors';
+import { history } from 'umi';
+import { useRequest } from '@@/plugin-request/request';
+import axios from 'axios';
+import { APIURL_Acad_Tutor } from '@/APIConfig';
 
 const Detail = () => {
+  const [tutor, setTutor] = useState(null);
+  useEffect(() => {
+    axios.get(`${APIURL_Acad_Tutor}?id=` + history.location.query.id).then((res) => {
+      setTutor(res.data.result);
+    });
+  }, []);
+
   const [visible, setVisible] = useState(false);
-  const o = {
-    id: 1,
-    name: '邱老师',
-    price: '$200~$260/小时',
-    desc: '善恩明星老师，辅导众多学生，是中国SAT培训界内凤毛麟角的英语基本功和教学技巧兼备的明星老师。',
-    img: 'https://static.bstcine.com/2021/01/19/183355364SZ3CAR1.png',
-    highlights: ['SAT', '托福', '动物农庄'],
-  };
+  console.log('history.location.query.id', history.location.query);
+  // const o = tutors.find((o) => tutor.id === history.location.query.id);
 
   const handleAskBtn = () => {
     setVisible(true);
   };
+
+  if (!tutor)
+    return (
+      <div className="container page-detail">
+        <div className="card mb-3">loading</div>
+      </div>
+    );
 
   return (
     <div className="container page-detail">
       <div className="card mb-3">
         <div className="card-body detail-top">
           <div className="detail-cover">
-            <img src={o.img} alt="" />
+            <img src={tutor.img} alt="" />
           </div>
           <div className="detail-desc">
             <div className="detail-name">
-              <h3>{o.name}</h3>
-              <span className="detail-price">{o.price}</span>
+              <h3>{tutor.name}</h3>
+              <span className="detail-price">{tutor.price}</span>
             </div>
-            <div className="detail-brief">{o.desc}</div>
+            <div className="detail-brief">{tutor.remark_mentor}</div>
 
             <div className="detail-history">
-              <div>
-                教授学科：
-                <div className="detail-highlights">
-                  {o.highlights.map((o: string) => (
-                    <span key={o}>{o}</span>
-                  ))}
-                </div>
+              <div className="detail-highlights">
+                {tutor.highlights.map((o: string) => (
+                  <span key={o}>{o}</span>
+                ))}
               </div>
-              <div>教学背景：30人</div>
-              <div>所在地/时区：波士顿,美国 / Eastern Standard Time (EST),UTC-5</div>
+              <div>所在地/时区：{tutor.location}</div>
             </div>
             <div className="contact-container">
               <button className="btn btn-primary btn-lg px-5 float-end" onClick={handleAskBtn}>
@@ -52,7 +61,20 @@ const Detail = () => {
           </div>
         </div>
       </div>
-
+      <div className="card mb-3">
+        <div className="card-header bg-white">教员简介</div>
+        <div className="card-body">
+          <div dangerouslySetInnerHTML={{ __html: tutor.introduce }}></div>
+          <div className="ratio ratio-16x9">
+            <video
+              src="https://static.bstcine.com/2021/03/09/104139132Sw5T5Ek.mp4"
+              preload="auto"
+              controls
+              controlsList="nodownload"
+            ></video>
+          </div>
+        </div>
+      </div>
       <div className="card mb-3">
         <div className="card-header bg-white">最新信息</div>
         <div className="card-body">
@@ -74,25 +96,6 @@ const Detail = () => {
         </div>
       </div>
 
-      <div className="card mb-3">
-        <div className="card-header bg-white">{o.name}要说的话</div>
-        <div className="card-body">
-          <p>
-            Hello
-            大家好，自我介绍下，我2010年以优异的成绩毕业于上海外国语大学研究生院，在她看来，求学阶段以“优秀”通过英语专业八级、大三获上海市高级口译证书、首次参加SAT考试便获得了阅读和数学双800（满分）总分2270、首次托福“裸考”获得119分……
-          </p>
-          <p>
-            邱老师的教学专业、细致、负责。她的授课深受学生喜爱。她的VIP学员覆盖了世界各地，包括波士顿、洛杉矶、克利夫兰、多伦多、温哥华、瑞士、香港。经她辅导的学生，有超过20人总分达到2200分以上，阅读达到700分以上。
-          </p>
-          <div className="ratio ratio-16x9">
-            <iframe
-              frameBorder="0"
-              src="https://v.qq.com/txp/iframe/player.html?vid=v0035sxynaf"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      </div>
       <div className="card mb-3">
         <div className="card-header bg-white">学员评价</div>
         <div className="card-body">

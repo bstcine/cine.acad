@@ -23,5 +23,11 @@ export default defineConfig({
   chainWebpack(config) {
     config.module.rule('file').test(/.mp4$/).use('file-loader').loader('file-loader');
   },
-  // hash:true
+  hash: true,
+  proxy: {
+    '/api': {
+      target: 'http://localhost:9000',
+      changeOrigin: true,
+    },
+  },
 });
