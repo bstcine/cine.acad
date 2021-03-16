@@ -41,7 +41,7 @@ jobs:
           GITHUB_REPO: github.com/bstcine/bstcine.github.io
         # 将编译后的博客文件推送到指定仓库
         run: |
-          cd ./public && git init && git add .
+          cd ./dist && git init && git add .
           git config user.name "daweilv"
           git config user.email "lvdawei1970@gmail.com"
           git add .
