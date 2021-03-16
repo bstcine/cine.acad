@@ -42,6 +42,8 @@ jobs:
         # 将编译后的博客文件推送到指定仓库
         run: |
           cd ./public && git init && git add .
+          git config user.name "daweilv"
+          git config user.email "lvdawei1970@gmail.com"
           git add .
           git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
           git push --force --quiet "https://${{ secrets.DAVID_WORKFLOW }}@$GITHUB_REPO" master:master
