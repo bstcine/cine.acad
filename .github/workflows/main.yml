@@ -35,7 +35,7 @@ jobs:
         run: |
           npm install
 
-      - name: Deploy hexo blog
+      - name: Deploy cineacademy.us
         env:
           # Github 仓库
           GITHUB_REPO: github.com/bstcine/bstcine.github.io
