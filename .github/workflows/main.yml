@@ -36,7 +36,7 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npm build
+        run: npm run-script build
 
       - name: Deploy cineacademy.us
         env:
