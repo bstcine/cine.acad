@@ -37,6 +37,7 @@
     "@types/react-dom": "^16.9.0",
     "@types/url-parse": "^1.4.3",
     "@umijs/test": "^3.3.5",
+    "file-loader": "^6.2.0",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.0",
     "react": "^16.12.0",
