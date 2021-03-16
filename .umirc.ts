@@ -31,4 +31,10 @@ export default defineConfig({
     },
   },
   exportStatic: {},
+  copy: [
+    {
+      from: 'src/CNAME',
+      to: '.',
+    },
+  ],
 });
