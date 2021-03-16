@@ -25,15 +25,18 @@ jobs:
           node-version: '12.x'
 
       - name: Cache node modules
-        # 设置包缓存目录，避免每次下载
+        id: cache
         uses: actions/cache@v1
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: node_modules
+          key: ${{runner.OS}}-npm-caches-${{ hashFiles('package-lock.json') }}
 
       - name: Install npm dependencies
-        run: |
-          npm install
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: Build project
+        run: npm build
 
       - name: Deploy cineacademy.us
         env:
