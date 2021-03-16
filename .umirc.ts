@@ -30,4 +30,5 @@ export default defineConfig({
       changeOrigin: true,
     },
   },
+  exportStatic: {},
 });
