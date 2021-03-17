@@ -5,14 +5,14 @@ export default defineConfig({
     type: 'none',
   },
   routes: [
-    { exact: true, path: '/welcome', component: '@/pages/welcome/index' },
+    { exact: true, path: '/welcome', component: '@/pages/welcome/index', title: '欢迎 - 善恩学院' },
     {
       exact: false,
       path: '/',
       component: '@/layouts/index',
       routes: [
-        { exact: true, path: '/', component: '@/pages/home/index', title: '欢迎 - 善恩学院' },
-        { exact: true, path: '/list', component: '@/pages/list/index', title: '首页 - 善恩学院' },
+        { exact: true, path: '/', component: '@/pages/home/index', title: '首页 - 善恩学院' },
+        { exact: true, path: '/list', component: '@/pages/list/index', title: '名师堂 - 善恩学院' },
         { exact: true, path: '/detail', component: '@/pages/detail/index', title: '详情 - 善恩学院' },
         { exact: true, path: '/about', component: '@/pages/about/index', title: 'QA - 善恩学院' },
         { exact: true, path: '/latest', component: '@/pages/latest/index', title: '最新课程 - 善恩学院' },
