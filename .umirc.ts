@@ -36,5 +36,9 @@ export default defineConfig({
       from: 'src/CNAME',
       to: '.',
     },
+    {
+      from: 'src/favicon.ico',
+      to: '.',
+    },
   ],
 });
