@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.less';
-const defaultImg = require('@/asset/profile-default.png');
+const defaultImg = require('@/asset/profile-default.jpg');
 
 const Item = ({ id, name, img, remark_mentor, highlights, price, location }: any) => {
   return (
