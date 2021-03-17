@@ -78,21 +78,7 @@ const Detail = () => {
       <div className="card mb-3">
         <div className="card-header bg-white">最新信息</div>
         <div className="card-body">
-          <p>俗话说，临阵磨枪不快也光！2021年度AMC10竞赛只剩最后一个月的备考时间！</p>
-
-          <p>所有的知识点都get到了吗？</p>
-          <p>每个原理都掌握了吗？</p>
-          <p>每道真题都会做了吗？</p>
-          <p>速度提上来了吗？</p>
-
-          <p>考试不仅考知识和速度，还考细节。考前集训尤为重要，也许今天熟悉的这个原理，就是明天考场上的得分利器。</p>
-
-          <p>
-            为此，善恩诚邀北美奥数王牌教练，利用最后的时间，强化考试重难点、横扫知识盲区，亲传答题技巧，实现高效备考！向着Honor和Distinguished
-            Honor奖项冲刺！！
-          </p>
-
-          <p>你准备好了吗？Ready? Go!</p>
+          <div dangerouslySetInnerHTML={{ __html: tutor.latest_news }}></div>
         </div>
       </div>
 
