@@ -26,7 +26,7 @@ export default defineConfig({
   hash: true,
   proxy: {
     '/api': {
-      target: 'http://localhost:9000',
+      target: 'https://www.bstcine.com',
       changeOrigin: true,
     },
   },

@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
-// @ts-ignore
 import Modal from 'react-modal';
 import './style.less';
-import tutors from '../list/components/tutors';
 import { history } from 'umi';
-import { useRequest } from '@@/plugin-request/request';
 import axios from 'axios';
 import { APIURL_Acad_Tutor } from '@/APIConfig';
 
@@ -18,7 +15,6 @@ const Detail = () => {
 
   const [visible, setVisible] = useState(false);
   console.log('history.location.query.id', history.location.query);
-  // const o = tutors.find((o) => tutor.id === history.location.query.id);
 
   const handleAskBtn = () => {
     setVisible(true);
@@ -65,14 +61,11 @@ const Detail = () => {
         <div className="card-header bg-white">教员简介</div>
         <div className="card-body">
           <div dangerouslySetInnerHTML={{ __html: tutor.introduce }}></div>
-          <div className="ratio ratio-16x9">
-            <video
-              src="https://static.bstcine.com/2021/03/09/104139132Sw5T5Ek.mp4"
-              preload="auto"
-              controls
-              controlsList="nodownload"
-            ></video>
-          </div>
+          {!!tutor.video && (
+            <div className="ratio ratio-16x9">
+              <video src={tutor.video} preload="auto" controls controlsList="nodownload"></video>
+            </div>
+          )}
         </div>
       </div>
       <div className="card mb-3">
