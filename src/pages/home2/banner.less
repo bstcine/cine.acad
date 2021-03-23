@@ -34,15 +34,17 @@
   line-height: 1.2;
   color: #fff;
   top: 120px;
-  text-align: center;
   left: 0;
   right: 0;
   font-weight: bold;
+  p {
+    text-align: center !important;
+  }
 }
 .slogan {
   display: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .banner {
     height: 450px;
   }
@@ -52,11 +54,13 @@
     left: 50%;
     transform: translateY(-50%);
     margin-left: -450px;
-    text-align: left;
+
+    p {
+      text-align: left !important;
+    }
   }
   .slogan {
     display: block;
-    z-index: 3;
     position: absolute;
     font-size: 36px;
     font-weight: bold;
@@ -65,5 +69,6 @@
     left: 50%;
     transform: translateY(-50%) rotateZ(90deg);
     margin-left: -606px;
+    z-index: 2;
   }
 }

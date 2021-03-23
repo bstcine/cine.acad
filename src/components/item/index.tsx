@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'umi';
 import './style.less';
 const defaultImg = require('@/asset/profile-default.jpg');
 
@@ -17,12 +18,12 @@ const Item = ({ id, name, img, remark_mentor, highlights, price, location }: any
         <div className="item-location">
           <i className="fas fa-map-marker-alt" /> {location}
         </div>
-        <a className="item-more" href={`/detail?id=${id}`}>
+        <NavLink className="item-more" to={`/detail?id=${id}`}>
           了解更多
-        </a>
+        </NavLink>
         <span className="item-price">{price}</span>
       </div>
-      <a href={`/detail?id=${id}`} />
+      <NavLink to={`/detail?id=${id}`} />
     </div>
   );
 };
