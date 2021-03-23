@@ -6,7 +6,7 @@ import Footer from '@/components/footer';
 export default function Layout({ children, location, route, history, match }: IRouteComponentProps) {
   return (
     <>
-      <Header />
+      <Header type="blue" />
       <main className="content">{children}</main>
       <Footer />
     </>

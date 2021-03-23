@@ -1,15 +1,19 @@
 import React from 'react';
 import './style.less';
 import { NavLink } from 'umi';
+import classnames from 'classnames';
 
-const Header = ({ className = 'header-blue' }) => {
+const Header = ({ type = 'white', fixed = false }) => {
   return (
-    <header className={className}>
-      <nav className="navbar navbar-expand-lg navbar-light">
+    <header className={classnames(`header-${type}`, { 'header-fixed': fixed })}>
+      <nav className="navbar navbar-expand-lg">
         <div className="container d-flex flex-column flex-md-row align-items-center justify-content-between">
-          <NavLink className="navbar-brand" to="/">
-            <img src={require('@/asset/logo_cine2.svg')} alt="logo" />
-          </NavLink>
+          <a className="navbar-brand" href="/">
+            <img
+              src={type === 'white' ? require('@/asset/logo_cine2_blue.svg') : require('@/asset/logo_cine2.svg')}
+              alt="logo"
+            />
+          </a>
 
           <div className="navbar-nav flex-row">
             <div className="navbar-nav flex-row">
@@ -19,9 +23,6 @@ const Header = ({ className = 'header-blue' }) => {
               <NavLink to="/latest" className="nav-link px-3" activeClassName="active">
                 最新课程
               </NavLink>
-              {/*<NavLink to="/list" className="nav-link px-3" activeClassName="active">*/}
-              {/*  名师堂*/}
-              {/*</NavLink>*/}
               <NavLink to="/about" className="nav-link px-3" activeClassName="active">
                 常见问题
               </NavLink>

@@ -1,13 +1,14 @@
 import React from 'react';
 import './style.less';
 import Header from '@/components/header';
-const mp4 = require('./asset/Stanford.mp4').default;
+const mp4 = require('@/asset/Stanford.mp4').default;
 import { NavLink } from 'umi';
+import Footer from '@/components/footer';
 
 export default () => {
   return (
     <div className="welcome-page">
-      <Header className="header-transparent" />
+      <Header type="blur" />
       <main className="welcome-main">
         <div className="slogan">
           <h2 className="text-center">欢迎来到善恩学院！</h2>
@@ -34,10 +35,8 @@ export default () => {
           </p>
         </div>
       </main>
-      <footer className="py-3">
-        <div className="container">Copyright 2014-2021 BSTCINE All Rights Reserved.</div>
-      </footer>
-      <img src={require('./asset/Stanford.jpg')} alt="" className="myVideo" />
+      <Footer type="blur" />
+      <img src={require('../../asset/Stanford.jpg')} alt="" className="myVideo" />
       <video autoPlay muted loop playsInline className="myVideo">
         <source src={mp4} type="video/mp4" />
       </video>

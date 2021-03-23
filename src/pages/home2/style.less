@@ -1,22 +1,22 @@
 main.content {
   //margin-top: 30px;
 }
-section {
+main .container > .card {
   margin-bottom: 15px;
   border: none;
   border-bottom: 1px solid #eaecf0;
-  padding-bottom: 50px;
-  &:last-child {
-    border-bottom: none;
-  }
 }
-section h2 {
+.home-card .card-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+.card-title {
   font-size: 24px;
   color: #053091;
   font-weight: normal;
 }
 
-section .btn-more {
+.card-body .btn-more {
   float: right;
   border-radius: 16px !important;
   padding-left: 18px;
@@ -33,7 +33,7 @@ section .btn-more {
     margin-bottom: 8px;
   }
 }
-.section {
+.home-card {
   position: relative;
   > a {
     position: absolute;

@@ -1,9 +1,10 @@
 import React from 'react';
+import classnames from 'classnames';
 
-const Footer = () => {
+const Footer = ({ type = 'white' }) => {
   return (
-    <footer className="bg-white py-3">
-      <div className="container text-black-50">Copyright 2014-2021 BSTCINE All Rights Reserved.</div>
+    <footer className={classnames('py-3', `footer-${type}`)}>
+      <div className="container">Copyright 2014-2021 BSTCINE All Rights Reserved.</div>
     </footer>
   );
 };
