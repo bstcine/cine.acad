@@ -8,6 +8,8 @@ import Header from '@/components/header';
 const mp4 = require('@/asset/Stanford.mp4').default;
 import { useScroll } from 'ahooks';
 import Footer from '@/components/footer';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 export default () => {
   const [arr, setArr] = useState([]);
@@ -29,17 +31,41 @@ export default () => {
           </video>
         </div>
         <div className={bannerStyle.overlay} />
+
         <div className={bannerStyle.text}>
-          {/*万卷可破*/}
-          {/*<br />*/}
-          {/*良师难觅*/}
-          {/*<br />*/}
-          {/*你和良师的距离<br/>*/}
-          {/*只差一个善恩学院*/}
-          在家里
-          <br />
-          学美高课程
+          <Carousel
+            autoPlay
+            infiniteLoop
+            emulateTouch={false}
+            centerMode={false}
+            showStatus={false}
+            showArrows={false}
+            showThumbs={false}
+            showIndicators={false}
+          >
+            <p>
+              万卷可破
+              <br />
+              良师难觅
+            </p>
+            <p>
+              在家里
+              <br />
+              学美高课程
+            </p>
+            <p>
+              学科辅导
+              <br />
+              升学顾问
+            </p>
+            <p>
+              阅读和写作
+              <br />
+              能力提升
+            </p>
+          </Carousel>
         </div>
+
         <div className={bannerStyle.slogan}>CINE ACADEMY</div>
       </div>
       <main className="content">

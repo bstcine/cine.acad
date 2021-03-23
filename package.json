@@ -28,6 +28,7 @@
     "bootstrap": "^5.0.0-beta1",
     "classnames": "^2.2.6",
     "react-modal": "^3.12.1",
+    "react-responsive-carousel": "^3.2.15",
     "tocbot": "^4.12.2",
     "umi": "^3.3.5",
     "url-parse": "^1.5.1"
