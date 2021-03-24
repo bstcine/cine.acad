@@ -7,7 +7,7 @@ import { APIURL_Acad_Home } from '@/APIConfig';
 import Header from '@/components/header';
 const mp4 = require('@/asset/Stanford.mp4').default;
 import { useScroll } from 'ahooks';
-import FooterInfo from '@/components/FooterInfo';
+import FooterInfo from '@/components/footerInfo';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import Copyright from '@/components/copyright';
