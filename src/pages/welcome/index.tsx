@@ -3,7 +3,7 @@ import './style.less';
 import Header from '@/components/header';
 const mp4 = require('@/asset/Stanford.mp4').default;
 import { NavLink } from 'umi';
-import Footer from '@/components/footer';
+import Footer from '@/components/copyright';
 
 export default () => {
   return (

@@ -1,8 +1,8 @@
 import { IRouteComponentProps } from 'umi';
 import React from 'react';
 import Header from '@/components/header';
-import Footer from '@/components/footer';
 import ScrollToTop from '@/components/scroll';
+import Copyright from '@/components/copyright';
 
 export default function Layout({ children, location, route, history, match }: IRouteComponentProps) {
   return (
@@ -10,7 +10,7 @@ export default function Layout({ children, location, route, history, match }: IR
       <ScrollToTop />
       <Header type="blue" />
       <main className="content">{children}</main>
-      <Footer />
+      <Copyright />
     </>
   );
 }

@@ -1,9 +1,9 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
-  nodeModulesTransform: {
-    type: 'none',
-  },
+  // nodeModulesTransform: {
+  //   type: 'none',
+  // },
   routes: [
     { exact: true, path: '/welcome', component: '@/pages/welcome/index', title: '欢迎 - 善恩学院' },
     { exact: true, path: '/', component: '@/pages/home/index', title: '首页 - 善恩学院' },

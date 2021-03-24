@@ -7,9 +7,10 @@ import { APIURL_Acad_Home } from '@/APIConfig';
 import Header from '@/components/header';
 const mp4 = require('@/asset/Stanford.mp4').default;
 import { useScroll } from 'ahooks';
-import Footer from '@/components/footer';
+import FooterInfo from '@/components/FooterInfo';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import Copyright from '@/components/copyright';
 
 export default () => {
   const [arr, setArr] = useState([]);
@@ -26,6 +27,7 @@ export default () => {
       <Header type={scroll.top > 30 ? 'white' : 'transparent'} fixed={true} />
       <div className={bannerStyle.banner}>
         <div className={bannerStyle.back}>
+          <img src={require('../../asset/Stanford.jpg')} alt="" />
           <video autoPlay muted loop playsInline>
             <source src={mp4} type="video/mp4" />
           </video>
@@ -75,7 +77,8 @@ export default () => {
           ))}
         </div>
       </main>
-      <Footer />
+      <FooterInfo />
+      <Copyright />
     </>
   );
 };
