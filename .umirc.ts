@@ -6,7 +6,7 @@ export default defineConfig({
   },
   routes: [
     { exact: true, path: '/welcome', component: '@/pages/welcome/index', title: '欢迎 - 善恩学院' },
-    { exact: true, path: '/', component: '@/pages/home2/index', title: '首页 - 善恩学院' },
+    { exact: true, path: '/', component: '@/pages/home/index', title: '首页 - 善恩学院' },
     {
       exact: false,
       path: '/',
