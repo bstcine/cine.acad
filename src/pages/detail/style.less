@@ -1,4 +1,6 @@
 .page-detail {
+  font-size: 14px;
+  letter-spacing: 1px;
   .card-header {
     font-size: 20px;
     font-weight: 400;
@@ -7,10 +9,6 @@
   .card {
     border-bottom-color: #eaecf0 !important;
     border-bottom-width: 2px !important;
-
-    &:last-child {
-      border-bottom: none !important;
-    }
   }
 }
 
@@ -31,6 +29,9 @@
     border-bottom: 1px solid #eaecf0;
     padding-bottom: 16px;
     margin-bottom: 16px;
+    &:last-child {
+      border-bottom: none !important;
+    }
   }
 }
 .detail-top {
@@ -117,7 +118,6 @@
 }
 @media (min-width: 768px) {
   .detail-history {
-    font-size: 16px;
   }
   .detail-cover {
     width: 128px;
