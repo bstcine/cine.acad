@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './style.less';
+import Rater from '@/components/rater';
+import { Input } from 'antd';
+import classnames from 'classnames';
+import { Button } from 'antd';
+
+const { TextArea } = Input;
 
 export default () => {
+  const [rate, setRate] = useState(4);
+  const [evaluation, setEvaluation] = useState('');
+
   return (
     <div className="container">
       <div className={style.title}>xxx老师的上课反馈</div>
-      <div className="content">
+      <div className={style.content}>
         <div className={style.itemControl}>
           <div className={style.label}>上课时间</div>
           <div className={style.item}>2021-03-12 12:00:00 ~ 2021-03-12 14:00:00</div>
@@ -25,11 +34,20 @@ export default () => {
         </div>
         <div className={style.itemControl}>
           <div className={style.label}>上课质量打分</div>
-          <div className={style.item}></div>
+          <div className={style.item}>
+            <Rater onChange={setRate} value={rate} />
+          </div>
         </div>
         <div className={style.itemControl}>
           <div className={style.label}>给老师的评语</div>
-          <div className={style.item}></div>
+          <div className={classnames(style.item, style.itemTextArea)}>
+            <TextArea rows={8} onChange={setEvaluation} value={evaluation} />
+          </div>
+        </div>
+        <div className={classnames(style.itemControl, style.itemControlCenter)}>
+          <Button size="large" type="primary" style={{ width: '50%' }}>
+            提交
+          </Button>
         </div>
       </div>
     </div>

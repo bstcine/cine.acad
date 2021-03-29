@@ -33,7 +33,7 @@ export default () => {
   return (
     <div className="container">
       <div className={style.title}>Richard's tutorial records</div>
-      <div className="content">
+      <div className={style.content}>
         <Form
           {...layout}
           name="basic"

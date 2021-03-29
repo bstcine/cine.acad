@@ -20,10 +20,10 @@ const FooterInfo = () => {
                 <a href="/about">关于善恩学院</a>{' '}
               </li>
               <li>
-                <a href="/about#qa">学院规则</a>{' '}
+                <a href="/about/#rule">学院规则</a>{' '}
               </li>
               <li>
-                <a href="/qa">FAQ</a>{' '}
+                <a href="/about/#faq">FAQ</a>{' '}
               </li>
             </ul>
           </div>
