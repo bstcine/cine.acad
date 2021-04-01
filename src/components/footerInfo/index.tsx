@@ -34,6 +34,9 @@ const FooterInfo = () => {
             <div>参与</div>
             <ul>
               <li>
+                <a href="/contact">联系善恩学院</a>
+              </li>
+              <li>
                 <a href="//www.bstcine.com/en">加入善恩学院</a>
               </li>
               <li>

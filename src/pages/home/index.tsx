@@ -46,9 +46,8 @@ export default () => {
             showIndicators={false}
           >
             <p>
-              万卷可破
-              <br />
-              良师难觅
+              汇聚世界的名师
+              <br />- 哈佛、麻省理工、哥伦比亚
             </p>
             <p>
               在家里
