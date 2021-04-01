@@ -46,8 +46,14 @@ export default () => {
             showIndicators={false}
           >
             <p>
-              汇聚世界的名师
-              <br />- 哈佛、麻省理工、哥伦比亚
+              哈佛、MIT
+              <br />
+              哥伦比亚
+            </p>
+            <p>
+              汇聚
+              <br />
+              世界名师
             </p>
             <p>
               在家里
