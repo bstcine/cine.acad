@@ -17,7 +17,7 @@ export default defineConfig({
         { exact: true, path: '/detail', component: '@/pages/detail/index', title: '详情 - 善恩学院' },
         { exact: true, path: '/about', component: '@/pages/about/index', title: 'QA - 善恩学院' },
         { exact: true, path: '/latest', component: '@/pages/latest/index', title: '最新课程 - 善恩学院' },
-        { exact: true, path: '/record/tutor', component: '@/pages/record/tutor', title: '最新课程 - 善恩学院' },
+        { exact: true, path: '/record/tutor/:tid', component: '@/pages/record/tutor', title: '最新课程 - 善恩学院' },
         { exact: true, path: '/record/student', component: '@/pages/record/student', title: '最新课程 - 善恩学院' },
       ],
     },

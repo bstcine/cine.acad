@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import { Form, Input, Button, DatePicker } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Form, Input, Button, DatePicker, message } from 'antd';
 import style from './style.less';
+import axios from 'axios';
+import { APIURL_Content_Student, APIURL_Acad_Record_Create } from '@/APIConfig';
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 const layout = {
@@ -11,12 +13,40 @@ const tailLayout = {
   wrapperCol: { offset: 8, span: 16 },
 };
 
-export default () => {
+export default ({ match, history }: any) => {
   const [form] = Form.useForm();
   const [duration, setDuration] = useState('0');
+  const [student, setStudent] = useState({});
+  const [disabled, setDisabled] = useState(false);
+  const [btnText, setBtnText] = useState('Submit');
+  const student_id = history.location.query.sid;
+  const teacher_id = match.params.tid;
+
+  useEffect(() => {
+    axios.get(`${APIURL_Content_Student}?id=` + student_id).then((res) => {
+      setStudent(res.data.result);
+    });
+  }, []);
 
   const onFinish = (values: any) => {
     console.log('Success:', values);
+    axios
+      .post(`${APIURL_Acad_Record_Create}`, {
+        teacher_id,
+        student_id,
+        start_at: values.time[0].format('x'),
+        end_at: values.time[1].format('x'),
+        content: values.content,
+      })
+      .then(() => {
+        message.success('submit success!');
+        setDisabled(true);
+        setBtnText('submitted!');
+      })
+      .catch((err) => {
+        console.log('err', err);
+        message.error(err.message);
+      });
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -32,7 +62,7 @@ export default () => {
 
   return (
     <div className="container">
-      <div className={style.title}>Richard's tutorial records</div>
+      <div className={style.title}>{student ? student.nickname + "'s" : ''} tutorial records</div>
       <div className={style.content}>
         <Form
           {...layout}
@@ -68,8 +98,8 @@ export default () => {
           </Form.Item>
 
           <Form.Item {...tailLayout}>
-            <Button type="primary" htmlType="submit">
-              Submit
+            <Button type="primary" htmlType="submit" disabled={disabled}>
+              {btnText}
             </Button>
           </Form.Item>
         </Form>
