@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import './style.less';
 import { history } from 'umi';
-import axios from 'axios';
 import { APIURL_Acad_Tutor } from '@/APIConfig';
+import { get } from '@/util/request';
 
 const Detail = () => {
   const [tutor, setTutor] = useState(null);
   useEffect(() => {
-    axios.get(`${APIURL_Acad_Tutor}?id=` + history.location.query.id).then((res) => {
-      setTutor(res.data.result);
+    get(APIURL_Acad_Tutor, { id: history.location.query.id }).then((res) => {
+      setTutor(res);
     });
   }, []);
 

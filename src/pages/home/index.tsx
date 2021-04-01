@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './style.less';
 import bannerStyle from './banner.less';
 import Row from '../home/components/row';
-import axios from 'axios';
 import { APIURL_Acad_Home } from '@/APIConfig';
 import Header from '@/components/header';
 const mp4 = require('@/asset/Stanford.mp4').default;
@@ -11,12 +10,13 @@ import FooterInfo from '@/components/footerInfo';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import Copyright from '@/components/copyright';
+import { get } from '@/util/request';
 
 export default () => {
   const [arr, setArr] = useState([]);
   useEffect(() => {
-    axios.get(APIURL_Acad_Home).then((res) => {
-      setArr(res.data.result);
+    get(APIURL_Acad_Home).then((res) => {
+      setArr(res);
     });
   }, []);
 

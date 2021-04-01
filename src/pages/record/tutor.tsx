@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Form, Input, Button, DatePicker, message } from 'antd';
 import style from './style.less';
 import axios from 'axios';
-import { APIURL_Content_Student, APIURL_Acad_Record_Create } from '@/APIConfig';
+import { APIURL_User_Student, APIURL_Acad_Record_Create } from '@/APIConfig';
 import moment from 'moment-timezone';
 import classnames from 'classnames';
+import { get, post } from '@/util/request';
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 const layout = {
@@ -26,31 +27,29 @@ export default ({ match, history }: any) => {
   const teacher_id = match.params.tid;
 
   useEffect(() => {
-    axios.get(`${APIURL_Content_Student}?id=` + student_id).then((res) => {
-      setStudent(res.data.result);
+    get(APIURL_User_Student, { id: student_id }).then((res: any) => {
+      setStudent(res);
     });
   }, []);
 
   const onSubmit = (values: any) => {
     console.log('Success:', values);
     const [start, end] = times;
-    axios
-      .post(`${APIURL_Acad_Record_Create}`, {
-        teacher_id,
-        student_id,
-        start_at: start.format('x'),
-        end_at: end.format('x'),
-        content,
-      })
-      .then(() => {
-        message.success('submit success!');
-        setDisabled(true);
-        setBtnText('submitted!');
-      })
-      .catch((err) => {
-        console.log('err', err);
-        message.error(err.message);
-      });
+    if (!start || !end || !content) {
+      alert('Please fill in the form');
+      return;
+    }
+    post(APIURL_Acad_Record_Create, {
+      teacher_id,
+      student_id,
+      start_at: start.format('x'),
+      end_at: end.format('x'),
+      content,
+    }).then(() => {
+      message.success('submit success!');
+      setDisabled(true);
+      setBtnText('submitted!');
+    });
   };
 
   const onFinishFailed = (errorInfo: any) => {

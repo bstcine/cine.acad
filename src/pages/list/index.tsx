@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Filter from './components/filter';
 import './style.less';
-import { filters, tags_by_id } from './components/filters';
+import { tags_by_id } from './components/filters';
 import Item from '../../components/item';
 import { useLocation } from 'umi';
-import axios from 'axios';
 import { APIURL_Acad_List } from '@/APIConfig';
+import { get } from '@/util/request';
 
 const List = () => {
   const [tutors, setTutors] = useState([]);
@@ -30,8 +30,8 @@ const List = () => {
   const location = useLocation();
   let errorMsg = '暂无匹配的导师，请选择其他筛选条件';
   useEffect(() => {
-    axios.get(APIURL_Acad_List).then((res) => {
-      const { tutors, types } = res.data.result;
+    get(APIURL_Acad_List).then((res) => {
+      const { tutors, types } = res;
       setTutors(tutors);
       setTypes([{ id: '', name: '全部' }, ...types]);
     });
