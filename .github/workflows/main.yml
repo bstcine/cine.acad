@@ -39,25 +39,15 @@ jobs:
       - name: Build project
         run: npm run-script build
 
-      - name: Deploy
-        uses: easingthemes/ssh-deploy@v2.0.7
+      - name: Deploy cineacademy.us
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.DAVID_PRIVATE_SSH_KEY }}
-          ARGS: "-avz --delete"
-          SOURCE: "dist/"
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.TARGET }}
-
-#      - name: Deploy cineacademy.us
-#        env:
-#          # Github 仓库
-#          GITHUB_REPO: github.com/bstcine/bstcine.github.io
-#        # 将编译后的博客文件推送到指定仓库
-#        run: |
-#          cd ./dist && git init && git add .
-#          git config user.name "daweilv"
-#          git config user.email "lvdawei1970@gmail.com"
-#          git add .
-#          git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
-#          git push --force --quiet "https://${{ secrets.DAVID_WORKFLOW }}@$GITHUB_REPO" master:master
+          # Github 仓库
+          GITHUB_REPO: github.com/bstcine/bstcine.github.io
+        # 将编译后的博客文件推送到指定仓库
+        run: |
+          cd ./dist && git init && git add .
+          git config user.name "daweilv"
+          git config user.email "lvdawei1970@gmail.com"
+          git add .
+          git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
+          git push --force --quiet "https://${{ secrets.DAVID_WORKFLOW }}@$GITHUB_REPO" master:master
