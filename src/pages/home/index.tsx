@@ -4,7 +4,7 @@ import bannerStyle from './banner.less';
 import Row from '../home/components/row';
 import { APIURL_Acad_Home } from '@/APIConfig';
 import Header from '@/components/header';
-const mp4 = require('@/asset/Stanford.mp4').default;
+const mp4 = 'https://static.bstcine.com/2021/04/02/1439121Sj3mWee.mp4';
 import { useScroll } from 'ahooks';
 import FooterInfo from '@/components/footerInfo';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader

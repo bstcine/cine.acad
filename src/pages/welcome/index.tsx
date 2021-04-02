@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.less';
 import Header from '@/components/header';
-const mp4 = require('@/asset/Stanford.mp4').default;
+const mp4 = 'https://static.bstcine.com/2021/04/02/1439121Sj3mWee.mp4';
 import { NavLink } from 'umi';
 import Footer from '@/components/copyright';
 
