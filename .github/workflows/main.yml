@@ -39,12 +39,22 @@ jobs:
       - name: Build project
         run: npm run-script build
 
-      - name: Deploy cineacademy.us
-        # 将编译后的博客文件推送到指定仓库
-        run: |
-          cd ./dist && git init && git add .
-          git config user.name "daweilv"
-          git config user.email "lvdawei1970@gmail.com"
-          git add .
-          git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
-          git push --force --quiet "${{secrets.SERVER_GIT_REPO}}" master:master
+#      - name: Deploy cineacademy.us
+#        # 将编译后的博客文件推送到指定仓库
+#        run: |
+#          cd ./dist && git init && git add .
+#          git config user.name "daweilv"
+#          git config user.email "lvdawei1970@gmail.com"
+#          git add .
+#          git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
+#          git push --force --quiet "${{secrets.SERVER_GIT_REPO}}" master:master
+
+      - name: Deploy to Staging server
+        uses: easingthemes/ssh-deploy@v2.1.6
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DAVID_PRIVATE_SSH_KEY }}
+          ARGS: "-rltgoDzvO"
+          SOURCE: "dist/"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.TARGET }}
