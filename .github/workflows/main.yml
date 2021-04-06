@@ -47,4 +47,4 @@ jobs:
           git config user.email "lvdawei1970@gmail.com"
           git add .
           git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
-          git push --force --quiet "${{SERVER_GIT_REPO}}" master:master
+          git push --force --quiet "${{secrets.SERVER_GIT_REPO}}" master:master
