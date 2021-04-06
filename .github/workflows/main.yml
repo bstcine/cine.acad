@@ -40,9 +40,6 @@ jobs:
         run: npm run-script build
 
       - name: Deploy cineacademy.us
-        env:
-          # Github 仓库
-          GITHUB_REPO: github.com/bstcine/bstcine.github.io
         # 将编译后的博客文件推送到指定仓库
         run: |
           cd ./dist && git init && git add .
@@ -50,4 +47,4 @@ jobs:
           git config user.email "lvdawei1970@gmail.com"
           git add .
           git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
-          git push --force --quiet "https://${{ secrets.DAVID_WORKFLOW }}@$GITHUB_REPO" master:master
+          git push --force --quiet "${{SERVER_GIT_REPO}}" master:master
