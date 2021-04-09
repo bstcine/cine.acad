@@ -26,31 +26,27 @@ function Banner() {
           showArrows={false}
           showThumbs={false}
           showIndicators={false}
+          transitionTime={500}
         >
           <p>
-            哈佛、MIT
+            走进名校
             <br />
-            哥伦比亚
-          </p>
-          <p>
-            汇聚
-            <br />
-            世界名师
-          </p>
-          <p>
-            在家里
-            <br />
-            学美高课程
+            实力顾问
           </p>
           <p>
             学科辅导
             <br />
+            能力提升
+          </p>
+          <p>
+            助力学业
+            <br />
             升学顾问
           </p>
           <p>
-            阅读和写作
+            好导师，
             <br />
-            能力提升
+            尽在善恩！
           </p>
         </Carousel>
       </div>
