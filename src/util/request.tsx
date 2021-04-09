@@ -6,6 +6,7 @@ if (process.env.NODE_ENV == 'development') {
 } else {
   axios.defaults.baseURL = 'https://www.bstcine.com';
 }
+// axios.defaults.baseURL = 'https://www.bstcine.com';
 axios.interceptors.response.use(
   (response) => {
     if (response.status === 200) {
@@ -35,7 +36,7 @@ export function post(url, params) {
       });
   });
 }
-export function get(url, params) {
+export function get(url: string, params?: object) {
   return new Promise((resolve, reject) => {
     axios
       .get(url, {

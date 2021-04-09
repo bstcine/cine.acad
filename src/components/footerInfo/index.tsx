@@ -7,7 +7,7 @@ const FooterInfo = () => {
     <footer className={classnames(style.footerInfo)}>
       <div className={classnames('container', style.container)}>
         <div className={style.vision}>
-          <img src={require('@/asset/logo_cine2.svg')} alt="" />
+          <img src={require('@/asset/logo_cine2_gray.svg')} alt="" />
           <div>
             善恩学院致力于把世界最好的教育资源，以专业、透明和亲民的方式提供给世界各地的华人学子，助力他们的求学之旅。
           </div>
@@ -17,16 +17,16 @@ const FooterInfo = () => {
             <div>了解</div>
             <ul>
               <li>
-                <a href="/about">关于善恩学院</a>{' '}
+                <a href="/about">关于善恩学院</a>
               </li>
               <li>
-                <a href="/about/#story">品牌故事</a>{' '}
+                <a href="/about/#story">品牌故事</a>
               </li>
               <li>
-                <a href="/about/#rule">学院规则</a>{' '}
+                <a href="/about/#rule">学院规则</a>
               </li>
               <li>
-                <a href="/about/#faq">FAQ</a>{' '}
+                <a href="/about/#faq">FAQ</a>
               </li>
             </ul>
           </div>

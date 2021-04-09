@@ -89,7 +89,7 @@ const Detail = () => {
           <ul className="evaluates">
             {evaluations && evaluations.length > 0 ? (
               evaluations.map((o) => (
-                <li className="evaluate">
+                <li key={o.id} className="evaluate">
                   <Rate disabled defaultValue={o.rate} />
                   <span> {o.student_nickname}</span>
                   <br />

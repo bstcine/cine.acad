@@ -33,6 +33,7 @@ export default defineConfig({
       changeOrigin: true,
     },
   },
+  fastRefresh: {},
   exportStatic: {},
   copy: [
     {

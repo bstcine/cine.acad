@@ -64,7 +64,7 @@ export default ({ history }) => {
           <div className={style.item}>{record.content}</div>
         </div>
         <div className={style.itemControl}>
-          <div className={style.label}>上课质量打分</div>
+          <div className={style.label}>给老师的上课质量打分</div>
           <div className={style.item}>
             <Rater onChange={setRate} value={rate} />
           </div>
