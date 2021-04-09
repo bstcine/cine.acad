@@ -1,6 +1,7 @@
 .banner {
-  height: 100vh;
+  height: 600px;
   width: 100%;
+  position: relative;
 }
 
 .back {
@@ -41,26 +42,42 @@
 }
 
 .text {
+  display: none;
   z-index: 2;
   position: absolute;
-  font-size: 40px;
+  font-size: 6vw;
   line-height: 1.2;
   color: rgba(255, 255, 255, 0.7);
-  top: 120px;
+  top: 50%;
   left: 0;
   right: 0;
   font-weight: bold;
+  transform: translateY(-48%);
   p {
     text-align: center !important;
   }
 }
-@media (max-width: 1400px) {
+@media (max-width: 992px) {
   .banner {
-    padding-top: percentage(9/16);
-    position: relative;
-    height: 0;
+    height: 500px;
   }
-  .back video {
-    height: 100%;
+}
+@media (max-width: 767.99px) {
+  .banner {
+    height: 420px;
+  }
+  .text {
+    transform: translateY(-60px);
+    font-size: 8vw;
+  }
+}
+@media (max-width: 575.99px) {
+  .banner {
+    height: 280px;
+  }
+  .text {
+    display: block;
+    transform: translateY(0%);
+    font-size: 10vw;
   }
 }
