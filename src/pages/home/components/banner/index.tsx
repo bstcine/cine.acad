@@ -9,7 +9,7 @@ function Banner() {
   return (
     <div className={bannerStyle.banner}>
       <div className={bannerStyle.back}>
-        {/*<img src={require("@/asset/Stanford.jpg")} alt=""/>*/}
+        <img src={require('@/asset/school.jpg')} alt="" />
         <video autoPlay muted loop playsInline>
           <source src={mp4} type="video/mp4" />
         </video>
