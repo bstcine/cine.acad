@@ -23,10 +23,12 @@ header {
 .navbar-brand img {
   height: 35px;
 }
+.nav-link:hover {
+  background-color: rgba(20, 64, 152, 0.1);
+}
 .nav-link:hover,
 .nav-link.active {
   position: relative;
-  background-color: rgba(20, 64, 152, 0.1);
   &:before {
     content: '';
     position: absolute;
@@ -73,9 +75,11 @@ header {
 .header-blue,
 .header-blur,
 .header-transparent {
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
   .nav-link:hover,
   .nav-link.active {
-    background-color: rgba(255, 255, 255, 0.15);
     &:before {
       background-color: #fff;
     }
