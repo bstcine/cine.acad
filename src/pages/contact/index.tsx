@@ -1,9 +1,8 @@
 import React from 'react';
-import './style.less';
 
 export default () => {
   return (
-    <div className="container about-page">
+    <div className="container normalContainer">
       <h2>联系我们</h2>
       <p>
         善恩的学生遍布世界各地。我们在中国和美国设立办公室。为确保高效和无延迟的交流，请根据自身情况选择联系善恩学院的工作人员。
