@@ -135,9 +135,12 @@
 .toc-list-item a {
   transition: color 0s !important;
 }
-.is-active-link {
+.toc-link.is-active-link {
   color: #053091 !important;
 }
-.is-active-link::before {
+.toc-link.is-active-link::before {
   background-color: #053091;
+}
+.toc-link::before {
+  //background-color: transparent!important;
 }

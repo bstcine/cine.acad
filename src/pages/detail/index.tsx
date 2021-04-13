@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
-import './style.less';
+import s from './style.less';
 import { history } from 'umi';
 import { APIURL_Acad_Tutor, APIURL_Acad_Evaluations } from '@/APIConfig';
 import { get } from '@/util/request';
 import { Rate } from 'antd';
+import classnames from 'classnames';
+import Highlights from '@/components/highlights';
+const defaultImg = require('@/asset/profile-default.jpg');
 
 const Detail = () => {
   const [tutor, setTutor] = useState(null);
@@ -28,81 +31,73 @@ const Detail = () => {
     setVisible(true);
   };
 
-  if (!tutor)
-    return (
-      <div className="container page-detail">
-        <div className="card mb-3">loading</div>
-      </div>
-    );
+  if (!tutor) return <div className="container">loading</div>;
 
   return (
-    <div className="container page-detail">
-      <div className="card mb-3">
-        <div className="card-body detail-top">
-          <div className="detail-cover">
-            <img src={tutor.img} alt="" />
+    <div className={classnames('container', s.pageDetail)}>
+      <div className={s.crumbs}>
+        <a href="/">首页</a> / <span>讲师详情</span>
+      </div>
+      <div className={s.top}>
+        <div className={s.coverWrapper}>
+          <div className={s.cover} style={{ background: `url(${tutor.img || defaultImg}) no-repeat center/cover` }} />
+        </div>
+        <div className={s.textWrapper}>
+          <div className={s.name}>{tutor.name}</div>
+          <div className={s.brief}>{tutor.remark_mentor}</div>
+          <Highlights className={s.highlights} highlights={tutor.highlights} />
+          <div className={s.location}>
+            <i className="fas fa-map-marker-alt" /> 所在地/时区：{tutor.location}
           </div>
-          <div className="detail-desc">
-            <div className="detail-name">
-              <h3>{tutor.name}</h3>
-              <span className="detail-price">{tutor.price}</span>
-            </div>
-            <div className="detail-brief">{tutor.remark_mentor}</div>
-
-            <div className="detail-history">
-              <div className="detail-highlights">
-                {tutor.highlights.map((o: string) => (
-                  <span key={o}>{o}</span>
-                ))}
-              </div>
-              <div>所在地/时区：{tutor.location}</div>
-            </div>
-            <div className="contact-container">
-              <button className="btn btn-primary btn-lg px-5 float-end" onClick={handleAskBtn}>
-                <i className="fab fa-weixin"></i> 立即咨询
-              </button>
-            </div>
+        </div>
+        <div className={s.more}>
+          <span className={s.price}>{tutor.price}</span>
+          <div className={s.contactWrapper}>
+            <button className="btn btn-primary" onClick={handleAskBtn}>
+              <i className="fab fa-weixin"></i> 立即咨询
+            </button>
           </div>
         </div>
       </div>
-      <div className="card mb-3">
-        <div className="card-header bg-white">教员简介</div>
-        <div className="card-body">
-          <div dangerouslySetInnerHTML={{ __html: tutor.introduce }}></div>
+
+      <div className={s.detailWrapper}>
+        <div className={s.detailTitle}>教员简介</div>
+        <div className={s.detailBody}>
           {!!tutor.video && (
-            <div className="ratio ratio-16x9">
+            <div className={classnames(s.video, 'ratio ratio-16x9')}>
               <video src={tutor.video} preload="auto" controls controlsList="nodownload"></video>
             </div>
           )}
-        </div>
-      </div>
-      <div className="card mb-3">
-        <div className="card-header bg-white">最新信息</div>
-        <div className="card-body">
-          <div dangerouslySetInnerHTML={{ __html: tutor.latest_news }}></div>
+          <div className={s.txt} dangerouslySetInnerHTML={{ __html: tutor.introduce }}></div>
         </div>
       </div>
 
-      <div className="card mb-3">
-        <div className="card-header bg-white">学员评价</div>
-        <div className="card-body">
-          <ul className="evaluates">
-            {evaluations && evaluations.length > 0 ? (
-              evaluations.map((o) => (
-                <li key={o.id} className="evaluate">
-                  <Rate disabled defaultValue={o.rate} />
-                  <span> {o.student_nickname}</span>
-                  <br />
-                  <span className="evaluate-desc">{o.content}</span>
-                </li>
-              ))
-            ) : (
-              <li>
-                <span className="evaluate-desc">暂无评论</span>
-              </li>
-            )}
-          </ul>
-        </div>
+      <div className={s.latestWrapper}>
+        <div className={s.latestTitle}>最新消息</div>
+        {tutor.latest_news ? (
+          <div className={s.latestBody} dangerouslySetInnerHTML={{ __html: tutor.latest_news }}></div>
+        ) : (
+          <div className={classnames(s.latestBody, s.latestNone)}>暂无消息</div>
+        )}
+      </div>
+
+      <div className={s.evaluateWrapper}>
+        <div className={s.evaluateTitle}>学员评价</div>
+        {evaluations && evaluations.length > 0 ? (
+          <div className={s.evaluateBody}>
+            {evaluations.map((o) => (
+              <div key={o.id} className={s.evaluate}>
+                <div className={s.evaluateMeta}>
+                  <span>{o.student_nickname}</span>
+                  <span>{o.create_at.substring(0, 10)}</span>
+                </div>
+                <div className={s.evaluateDesc}>{o.content}</div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className={classnames(s.evaluateBody, s.evaluateNone)}>暂无评论</div>
+        )}
       </div>
 
       <Modal

@@ -2,8 +2,7 @@ import bannerStyle from '@/pages/home/banner.less';
 import { Carousel } from 'react-responsive-carousel';
 import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-// const mp4 = 'https://static.bstcine.com/2021/04/02/1439121Sj3mWee.mp4';
-const mp4 = 'https://static.bstcine.com/2021/04/10/103542968ShUN1YB.mp4';
+const mp4 = 'https://static-media.bstcine.com/2021/04/12/110022885ShpZ7Sz.mp4';
 
 function Banner() {
   return (
@@ -28,26 +27,32 @@ function Banner() {
           showArrows={false}
           showThumbs={false}
           showIndicators={false}
+          interval={2000}
         >
           <div>
-            走进名校
+            顶尖顾问
             <br />
-            实力顾问
+            成就你的名校梦想
           </div>
           <div>
-            学科辅导
+            哈佛名师
             <br />
-            能力提升
+            引你走进学术殿堂
           </div>
           <div>
-            助力学业
+            数理化文史哲
             <br />
-            升学顾问
+            全科覆盖
           </div>
           <div>
-            好导师，
+            结伴名师
             <br />
-            尽在善恩！
+            终生受益
+          </div>
+          <div>
+            汇聚天下名师
+            <br />
+            成就您的人生
           </div>
         </Carousel>
       </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'umi';
 import style from './style.less';
 import classnames from 'classnames';
+import Highlights from '@/components/highlights';
 const defaultImg = require('@/asset/profile-default.jpg');
 
 const Item = ({ id, name, img, remark_mentor, highlights, price, location }: any) => {
@@ -12,11 +13,8 @@ const Item = ({ id, name, img, remark_mentor, highlights, price, location }: any
       </div>
       <div className={style.detail}>
         <div className={style.name}>{name}</div>
-        <div className={style.highlights}>
-          {highlights.map((o: string) => (
-            <span key={o}>{o}</span>
-          ))}
-        </div>
+        <Highlights highlights={highlights} className={style.highlights} />
+
         <div className={style.price}>{price}</div>
 
         <div className={style.desc}>{remark_mentor}</div>

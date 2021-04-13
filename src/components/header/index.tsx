@@ -16,17 +16,15 @@ const Header = ({ type = 'white', fixed = false }) => {
           </a>
 
           <div className="navbar-nav flex-row">
-            <div className="navbar-nav flex-row">
-              <NavLink exact to="/" className="nav-link px-3" activeClassName="active">
-                首页
-              </NavLink>
-              <NavLink to="/latest" className="nav-link px-3" activeClassName="active">
-                最新课程
-              </NavLink>
-              <NavLink to="/about" className="nav-link px-3" activeClassName="active">
-                常见问题
-              </NavLink>
-            </div>
+            <NavLink exact to="/" className="nav-link" activeClassName="active">
+              首页
+            </NavLink>
+            <NavLink to="/latest" className="nav-link" activeClassName="active">
+              最新课程
+            </NavLink>
+            <NavLink to="/about" className="nav-link" activeClassName="active">
+              常见问题
+            </NavLink>
           </div>
         </div>
       </nav>

@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import Filter from './components/filter';
-import './style.less';
+import s from './style.less';
 import { tags_by_id } from './components/filters';
-import Item from '../../components/item';
 import { useLocation } from 'umi';
 import { APIURL_Acad_List } from '@/APIConfig';
 import { get } from '@/util/request';
+import classnames from 'classnames';
+import Filter from './components/filter';
+import Item from '@/components/item';
 
 const List = () => {
   const [tutors, setTutors] = useState([]);
   const [types, setTypes] = useState([]);
   const tags = [
-    { id: '', name: '全部' },
     { id: '1', name: '一年级' },
     { id: '2', name: '二年级' },
     { id: '3', name: '三年级' },
@@ -33,7 +33,7 @@ const List = () => {
     get(APIURL_Acad_List).then((res) => {
       const { tutors, types } = res;
       setTutors(tutors);
-      setTypes([{ id: '', name: '全部' }, ...types]);
+      setTypes(types);
     });
   }, []);
   const filterTutor = (tutors: Array<any>, query: any) => {
@@ -67,19 +67,19 @@ const List = () => {
   const _tutors = filterTutor(tutors, location.query);
 
   return (
-    <div className="container">
-      <div className="filter_bar">
+    <div className={classnames('container', s.container)}>
+      <div className={s.filterBar}>
         <Filter param_name="type" name="方向" list={types} />
         <Filter param_name="tag" name="年级" list={tags} />
       </div>
       {!!_tutors.length ? (
-        <div className="list">
+        <div className={s.list}>
           {_tutors.map((o) => (
             <Item key={o.id} {...o} />
           ))}
         </div>
       ) : (
-        <div className="list-empty">{errorMsg}</div>
+        <div className={s.listEmpty}>{errorMsg}</div>
       )}
     </div>
   );
