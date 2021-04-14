@@ -100,21 +100,9 @@ const Detail = () => {
         )}
       </div>
 
-      <Modal
-        isOpen={visible}
-        onRequestClose={() => setVisible(false)}
-        style={{
-          content: {
-            width: 350,
-            height: 320,
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%,-50%)',
-          },
-        }}
-      >
-        <div>
-          <h2>扫描微信二维码</h2>
+      <Modal isOpen={visible} onRequestClose={() => setVisible(false)} className={s.modalContent}>
+        <div className={s.modalText}>
+          <h4>联系我们</h4>
           <button
             type="button"
             className="btn-close"
@@ -125,13 +113,18 @@ const Detail = () => {
             }}
             onClick={() => setVisible(false)}
           />
-          <span>微信号: BSTCINE02</span>
-          <img
-            className="m-auto d-block"
-            style={{ width: 200, height: 200 }}
-            src="https://www.bstcine.com/asset/image/qrcode_bst02.e826d3fe.jpg"
-            alt=""
-          />
+          <p>
+            中国和亚洲地区的用户，建议联系上海办公室刘老师。
+            <br />
+            电话和微信号同为 156 9218 8269 <br />
+            <img src="https://static.bstcine.com/2021/04/10/111707330S9J16yK.jpg" alt="上海办公室刘老师" height="160" />
+          </p>
+          <p>
+            北美和欧洲地区的用户，建议联系美国办公室赵老师。
+            <br />
+            电话和微信号同为001-978 893 6581 <br />
+            <img src="https://static.bstcine.com/2021/04/10/111707738SMcNn7Y.jpg" alt="美国办公室赵老师" height="160" />
+          </p>
         </div>
       </Modal>
     </div>
