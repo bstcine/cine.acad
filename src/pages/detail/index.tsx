@@ -31,7 +31,7 @@ const Detail = () => {
     setVisible(true);
   };
 
-  if (!tutor) return <div className="container">loading</div>;
+  if (!tutor) return <div className={classnames('container', s.pageDetail)} />;
 
   return (
     <div className={classnames('container', s.pageDetail)}>
