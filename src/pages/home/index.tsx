@@ -9,6 +9,7 @@ import Copyright from '@/components/copyright';
 import { get } from '@/util/request';
 import Banner from './components/banner';
 import Slogan from './components/slogan';
+import useReStoreScrollTop from '@/components/scroll';
 
 export default () => {
   const [arr, setArr] = useState([]);
@@ -20,7 +21,7 @@ export default () => {
   }, []);
 
   const scroll = useScroll(document);
-
+  useReStoreScrollTop();
   return (
     <>
       <Header type={scroll.top > 30 ? 'white' : 'transparent'} fixed={true} />

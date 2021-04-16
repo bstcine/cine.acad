@@ -13,6 +13,7 @@ const Detail = () => {
   const [evaluations, setEvaluations] = useState([]);
   const teacher_id = history.location.query.id;
   useEffect(() => {
+    window.scrollTo(0, 0);
     get(APIURL_Acad_Tutor, { id: teacher_id }).then((res) => {
       setTutor(res);
       if (res.user_id) {
