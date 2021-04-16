@@ -5,12 +5,13 @@ import Copyright from '@/components/copyright';
 import FooterInfo from '@/components/footerInfo';
 import Slogan from '@/pages/home/components/slogan';
 
-export default function Layout({ children, location, route, history, match }: IRouteComponentProps) {
+export default function Layout({ children, location }: IRouteComponentProps) {
+  const sloganPages = ['/list', '/about', '/latest', '/contact'];
   return (
     <>
       <Header type="blue" />
       <main className="content">{children}</main>
-      <Slogan />
+      {sloganPages.includes(location.pathname) && <Slogan />}
       <FooterInfo />
       <Copyright />
     </>

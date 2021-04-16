@@ -1,4 +1,4 @@
-import bannerStyle from '@/pages/home/banner.less';
+import style from './style.less';
 import { Carousel } from 'react-responsive-carousel';
 import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -6,16 +6,16 @@ const mp4 = 'https://static-media.bstcine.com/2021/04/12/110022885ShpZ7Sz.mp4';
 
 function Banner() {
   return (
-    <div className={bannerStyle.banner}>
-      <div className={bannerStyle.back}>
+    <div className={style.banner}>
+      <div className={style.back}>
         <img src={require('@/asset/school.jpg')} alt="" />
         <video autoPlay muted loop playsInline>
           <source src={mp4} type="video/mp4" />
         </video>
       </div>
-      <div className={bannerStyle.overlay} />
+      <div className={style.overlay} />
 
-      <div className={bannerStyle.text}>
+      <div className={style.text}>
         <Carousel
           autoPlay
           infiniteLoop
@@ -57,7 +57,7 @@ function Banner() {
         </Carousel>
       </div>
 
-      {/*<div className={bannerStyle.slogan}>CINE ACADEMY</div>*/}
+      {/*<div className={style.slogan}>CINE ACADEMY</div>*/}
     </div>
   );
 }

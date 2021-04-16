@@ -4,7 +4,6 @@ import s from './style.less';
 import { history } from 'umi';
 import { APIURL_Acad_Tutor, APIURL_Acad_Evaluations } from '@/APIConfig';
 import { get } from '@/util/request';
-import { Rate } from 'antd';
 import classnames from 'classnames';
 import Highlights from '@/components/highlights';
 const defaultImg = require('@/asset/profile-default.jpg');
@@ -117,13 +116,13 @@ const Detail = () => {
             中国和亚洲地区的用户，建议联系上海办公室刘老师。
             <br />
             电话和微信号同为 156 9218 8269 <br />
-            <img src="https://static.bstcine.com/2021/04/10/111707330S9J16yK.jpg" alt="上海办公室刘老师" height="160" />
+            <img src="https://static.bstcine.com/2021/04/16/095217979SsesMdf.jpg" alt="上海办公室刘老师" />
           </p>
           <p>
             北美和欧洲地区的用户，建议联系美国办公室赵老师。
             <br />
             电话和微信号同为001-978 893 6581 <br />
-            <img src="https://static.bstcine.com/2021/04/10/111707738SMcNn7Y.jpg" alt="美国办公室赵老师" height="160" />
+            <img src="https://static.bstcine.com/2021/04/16/095217393SgsVxjG.jpg" alt="美国办公室赵老师" />
           </p>
         </div>
       </Modal>

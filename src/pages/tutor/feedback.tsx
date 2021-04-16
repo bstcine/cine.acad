@@ -45,12 +45,12 @@ export default ({ history }) => {
         <div className={style.itemControl}>
           <div className={style.label}>上课时间</div>
           <div className={style.item}>
-            纽约时间 {moment(record.start_at, 'x').tz('America/New_York').format('YYYY-MM-DD HH:mm:ss')} ~{' '}
-            {moment(record.end_at, 'x').tz('America/New_York').format('YYYY-MM-DD HH:mm:ss')}
+            纽约时间 {moment(record.start_at, 'x').tz('America/New_York').format('YYYY-MM-DD HH:mm')} ~{' '}
+            {moment(record.end_at, 'x').tz('America/New_York').format('YYYY-MM-DD HH:mm')}
           </div>
           <div className={style.item}>
-            上海时间 {moment(record.start_at, 'x').tz('Asia/Shanghai').format('YYYY-MM-DD HH:mm:ss')} ~{' '}
-            {moment(record.end_at, 'x').tz('Asia/Shanghai').format('YYYY-MM-DD HH:mm:ss')}
+            上海时间 {moment(record.start_at, 'x').tz('Asia/Shanghai').format('YYYY-MM-DD HH:mm')} ~{' '}
+            {moment(record.end_at, 'x').tz('Asia/Shanghai').format('YYYY-MM-DD HH:mm')}
           </div>
         </div>
         <div className={style.itemControl}>

@@ -6,3 +6,4 @@ export const APIURL_Acad_Record = '/api/acad/record'; // 授课记录
 export const APIURL_Acad_Record_Create = '/api/acad/record/create'; // 新增授课记录
 export const APIURL_Acad_Record_Update = '/api/acad/record/update'; // 修改授课记录
 export const APIURL_Acad_Evaluations = '/api/acad/evaluations'; // 导师评价
+export const APIURL_Acad_Relation = '/api/acad/relation'; // 师生关系

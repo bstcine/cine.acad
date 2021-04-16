@@ -22,18 +22,29 @@ export default defineConfig({
       path: '/',
       component: '@/layouts/index',
       routes: [
-        // { exact: true, path: '/', component: '@/pages/home/index', title: '首页 - 善恩学院' },
-        {
-          exact: true,
-          path: '/list',
-          component: '@/pages/list/index',
-          title: '名师堂 - 善恩学院 - 美国大学升学顾问, 英语阅读和写作, AP考试, 美高学科辅导',
-        },
         {
           exact: true,
           path: '/detail',
           component: '@/pages/detail/index',
           title: '详情 - 善恩学院 - 美国大学升学顾问, 英语阅读和写作, AP考试, 美高学科辅导',
+        },
+        {
+          exact: true,
+          path: '/tutor/form',
+          component: '@/pages/tutor/form',
+          title: '填写报告 - 善恩学院 - 美国大学升学顾问, 英语阅读和写作, AP考试, 美高学科辅导',
+        },
+        {
+          exact: true,
+          path: '/tutor/feedback',
+          component: '@/pages/tutor/feedback',
+          title: '填写反馈 - 善恩学院 - 美国大学升学顾问, 英语阅读和写作, AP考试, 美高学科辅导',
+        },
+        {
+          exact: true,
+          path: '/list',
+          component: '@/pages/list/index',
+          title: '名师堂 - 善恩学院 - 美国大学升学顾问, 英语阅读和写作, AP考试, 美高学科辅导',
         },
         {
           exact: true,
@@ -52,18 +63,6 @@ export default defineConfig({
           path: '/contact',
           component: '@/pages/contact/index',
           title: '联系善恩学院 - 善恩学院 - 美国大学升学顾问, 英语阅读和写作, AP考试, 美高学科辅导',
-        },
-        {
-          exact: true,
-          path: '/record/tutor/:tid',
-          component: '@/pages/record/tutor',
-          title: '最新课程 - 善恩学院 - 美国大学升学顾问, 英语阅读和写作, AP考试, 美高学科辅导',
-        },
-        {
-          exact: true,
-          path: '/record/student',
-          component: '@/pages/record/student',
-          title: '最新课程 - 善恩学院 - 美国大学升学顾问, 英语阅读和写作, AP考试, 美高学科辅导',
         },
       ],
     },
