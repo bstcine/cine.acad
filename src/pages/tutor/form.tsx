@@ -6,6 +6,8 @@ import classnames from 'classnames';
 import { get, post } from '@/util/request';
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
+import local from 'antd/es/date-picker/locale/en_US.js';
+local.lang.rangePlaceholder = ['Starting Time', 'Ending Time'];
 
 export default ({ match, history }: any) => {
   const [duration, setDuration] = useState('0');
@@ -60,7 +62,7 @@ export default ({ match, history }: any) => {
             showTime
             style={{ width: '100%' }}
             format="YYYY-MM-DD HH:mm"
-            // locale={{ lang: { rangePlaceholder: ['Starting Time', 'Ending Time'] } }}
+            locale={local}
             onChange={(dates) => {
               setTimes(dates);
               const [start, end] = dates;
