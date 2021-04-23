@@ -49,7 +49,7 @@ export default ({ match, history }: any) => {
   return (
     <div className={classnames(style.content, 'container')}>
       <h2>
-        Tutoring Log by {relation.teacher_nickname} for {relation.student_nickname}
+        Tutoring Log by {relation.teacher_name} {relation.teacher_surname} for {relation.student_name} {relation.student_surname}
       </h2>
       <p>Please enter in the following forms the information of your last session with your student.</p>
       <div className={style.itemControl}>

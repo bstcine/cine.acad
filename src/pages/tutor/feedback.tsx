@@ -50,7 +50,7 @@ export default ({ history }) => {
 
   return (
     <div className={classnames(style.content, 'container')}>
-      <h2>{`${teacher.nickname}老师`}的上课反馈</h2>
+      <h2>{`${teacher.name}老师`}的上课反馈</h2>
       <div className={style.itemControl}>
         <div className={style.label}>上课时间</div>
         <div className={style.item}>北京时间 {dateFriendly(record.start_at, record.end_at, 'Asia/Shanghai')}</div>
