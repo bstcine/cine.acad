@@ -7,6 +7,7 @@ import { get } from '@/util/request';
 import classnames from 'classnames';
 import Highlights from '@/components/highlights';
 const defaultImg = require('@/asset/profile-default.jpg');
+import { Helmet } from 'umi';
 
 const Detail = () => {
   const [tutor, setTutor] = useState(null);
@@ -35,6 +36,9 @@ const Detail = () => {
 
   return (
     <div className={classnames('container', s.pageDetail)}>
+      <Helmet>
+        <title>{tutor.name}导师详情 - 善恩学院 - 美国大学升学顾问, 英语阅读和写作, AP考试, 美高学科辅导</title>
+      </Helmet>
       <div className={s.crumbs}>
         <a href="/">首页</a> / <span>讲师详情</span>
       </div>

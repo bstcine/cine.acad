@@ -26,7 +26,7 @@ export default defineConfig({
           exact: true,
           path: '/detail',
           component: '@/pages/detail/index',
-          title: '详情 - 善恩学院 - 美国大学升学顾问, 英语阅读和写作, AP考试, 美高学科辅导',
+          title: '',
         },
         {
           exact: true,

@@ -2,9 +2,10 @@ import useTOC from '@/hooks/useTOC';
 import React from 'react';
 import s from './style.less';
 import classnames from 'classnames';
+import useReStoreScrollTop from '@/components/scroll';
 
 const About = () => {
-  // useTOC();
+  useReStoreScrollTop();
   return (
     <div className={classnames(s.aboutPage, 'container')}>
       <div className="js-toc-content">
