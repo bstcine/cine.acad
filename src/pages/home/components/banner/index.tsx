@@ -2,11 +2,12 @@ import style from './style.less';
 import { Carousel } from 'react-responsive-carousel';
 import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import classNames from 'classnames';
 const mp4 = 'https://static-media.bstcine.com/2021/04/12/110022885ShpZ7Sz.mp4';
 
-function Banner() {
+function Banner({ className }) {
   return (
-    <div className={style.banner}>
+    <div className={classNames(style.banner, className)}>
       <div className={style.back}>
         <img src={require('@/asset/school.jpg')} alt="" />
         <video autoPlay muted loop playsInline>

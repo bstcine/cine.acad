@@ -18,6 +18,12 @@ export default defineConfig({
       title: '首页 - 善恩学院 - 美国大学升学顾问, 英语阅读和写作, AP考试, 美高学科辅导',
     },
     {
+      exact: true,
+      path: '/latest',
+      component: '@/pages/latest/index',
+      title: '最新课程 - 善恩学院 - 美国大学升学顾问, 英语阅读和写作, AP考试, 美高学科辅导',
+    },
+    {
       exact: false,
       path: '/',
       component: '@/layouts/index',
@@ -51,12 +57,6 @@ export default defineConfig({
           path: '/about',
           component: '@/pages/about/index',
           title: 'QA - 善恩学院 - 美国大学升学顾问, 英语阅读和写作, AP考试, 美高学科辅导',
-        },
-        {
-          exact: true,
-          path: '/latest',
-          component: '@/pages/latest/index',
-          title: '最新课程 - 善恩学院 - 美国大学升学顾问, 英语阅读和写作, AP考试, 美高学科辅导',
         },
         {
           exact: true,
