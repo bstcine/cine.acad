@@ -2,7 +2,7 @@ import axios from 'axios';
 import { message } from 'antd';
 
 if (process.env.NODE_ENV == 'development') {
-  axios.defaults.baseURL = 'http://localhost:9000';
+  // axios.defaults.baseURL = 'http://localhost:9000';
 } else {
   axios.defaults.baseURL = 'https://www.bstcine.com';
 }
